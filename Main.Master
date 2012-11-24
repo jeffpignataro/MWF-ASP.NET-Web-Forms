@@ -1,0 +1,36 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="MWF_ASP.NET_Web_Forms.Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>MWF ASP.NET Web Forms Example</title>
+
+    <link rel="stylesheet" href="http://mwf.local:8080/assets/css.php" type="text/css" />
+    <link rel="stylesheet" href="style/basic.css" type="text/css" />
+
+    <script type="text/javascript" href="http://mwf.local:8080/assets/js.php"></script>
+</head>
+<body>
+    <form id="mainForm" runat="server" class="webform">
+        
+        <h1 id="header">
+	        <a href="/">
+		        <img src="http://mwf.local:8080/assets/img/mwf-header.gif" alt="Home" />
+	        </a>
+	        <span>Web Forms Example Page</span>
+        </h1>
+          
+        <asp:ContentPlaceHolder ID="cphMain" runat="server">
+        </asp:ContentPlaceHolder>
+    
+    	<div id="footer">
+		    <p>
+			    Lorem Ipsum &copy; 2012<br />
+			    <a href="#">View Full Site</a>
+		    </p>
+        </div>
+
+    </form>
+</body>
+</html>

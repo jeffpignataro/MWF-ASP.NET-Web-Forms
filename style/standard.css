@@ -1,0 +1,31 @@
+﻿form.webform
+{
+    margin: 0;
+}
+
+form.webform a.button
+{
+    border-bottom: 0;
+    margin: 10px 10px 0;
+    width: auto;
+}
+
+form.webform .menu-padded, form.webform .content-padded
+{
+    border: 1px solid #D0D0D0;
+}
+
+form.webform div.button
+{
+    padding-top: 10px;
+}
+
+form.webform .inner-form
+{
+    margin: 10px;
+}
+
+form.webform div.message
+{
+    margin: 0.6em 10px 0;
+}
