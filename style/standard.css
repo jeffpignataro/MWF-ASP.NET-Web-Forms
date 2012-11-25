@@ -1,7 +1,18 @@
-﻿form.webform
+﻿/* =STRUCTURE
+------------------------------------------------------- */
+
+form.webform
 {
     margin: 0;
 }
+
+form.webform .menu-padded, form.webform .content-padded
+{
+    border: 1px solid #D0D0D0;
+}
+
+/* =BUTTONS
+------------------------------------------------------- */
 
 form.webform a.button
 {
@@ -10,22 +21,23 @@ form.webform a.button
     width: auto;
 }
 
-form.webform .menu-padded, form.webform .content-padded
-{
-    border: 1px solid #D0D0D0;
-}
-
 form.webform div.button
 {
     padding-top: 10px;
 }
 
-form.webform .inner-form
-{
-    margin: 10px;
-}
+/* =MESSAGES
+------------------------------------------------------- */
 
 form.webform div.message
 {
     margin: 0.6em 10px 0;
+}
+
+/* =FORMS
+------------------------------------------------------- */
+
+form.webform .inner-form
+{
+    margin: 10px;
 }
