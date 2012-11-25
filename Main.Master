@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="http://mwf.local:8080/assets/css.php" type="text/css" />
     <link rel="stylesheet" href="style/basic.css" type="text/css" />
     <link rel="stylesheet" href="style/standard.css" type="text/css" />
+    <link rel="stylesheet" href="style/full.css" type="text/css" />
 
     <script type="text/javascript" href="http://mwf.local:8080/assets/js.php"></script>
 </head>

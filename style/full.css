@@ -1,6 +1,11 @@
-﻿form.webform a.button
+﻿/* =BUTTONS
+------------------------------------------------------- */
+
+form.webform a.button
 {
     background: -moz-linear-gradient(#6883BC, #536895) repeat scroll 0 0 transparent;
+    background: -o-linear-gradient(#6883BC, #536895) repeat scroll 0 0 transparent;
+    background: -webkit-linear-gradient(#6883BC, #536895) repeat scroll 0 0 transparent;
     box-shadow: none;
     text-shadow: none;
 }
