@@ -6,17 +6,36 @@ includes __ASP.NET Web Forms__.
 
 However, a lot of the functionality within the ASP.NET Web Forms framework is enabled by placing
 Server Controls within a `form` element. Unfortunately, this can cause issues
-with MWF's default styling, which expects that only standard form elements will be included within
-`form` elements.
+with MWF's default styling, which expects that only standard form entities will be included within
+the `form` element.
 
 This repository contains two major components:
 
-* An __override stylesheet__ to correct these styling issues
+* A set of __override styles__ to correct these styling issues
 * __Guidelines__ for restructuring ASP.NET Web Forms pages to avoid these issues
 
-## Override Stylesheet
+## Override Styles
 
-To apply the override stylesheet, simply add the `.webform` CSS class to the ASP.NET form containing
+### Including the Stylesheets
+
+To apply the override styles, you need to create a directory underneath the `mwf/root/assets/css`
+directory (for example `aspnetoverride`), that includes the three stylesheets, and then reference this
+directory in the `mwf/config/css.ini` configuration file:
+
+```
+custom[]="aspnetoverride"
+```
+
+Alternatively, you could include the stylesheets
+[via the CSS handler](https://github.com/ucla/mwf/wiki/API%3A-Script%3A-CSS-Handler):
+
+```
+<link rel="stylesheet" href="http://{MOBILE_DOMAIN}/assets/css.php?basic={PATH_TO_BASIC.CSS}&standard={PATH_TO_STANDARD.CSS}&full={PATH_TO_FULL.CSS}" type="text/css">
+```
+
+### Applying the Styles
+
+Next, simply add the `.webform` CSS class to the ASP.NET form containing
 the web page's elements. For forms within this containing form, use a `div` element with an
 `.inner-form` CSS class instead of a form.
 
@@ -38,7 +57,7 @@ For example, imagine we have the following standard MWF page with a form:
 ```
 
 Now, imagine this page was wrapped in a form element. To force the styling to match the default
-MWF styling, add the `.webform` to the containing `form` element and switch the inner `form` with
+MWF styling, add `.webform` to the containing `form` element and switch the inner `form` with
 a `div` with the `.inner-form` CSS class.
 
 ```html
@@ -62,7 +81,7 @@ a `div` with the `.inner-form` CSS class.
 
 ## Guidelines
 
-The following guidelines provide some advice for...
+The following guidelines provide some general advice for avoiding the issues described above:
 
 ### Restrict Form Scope
 
@@ -70,7 +89,32 @@ Many of the Server Controls do not actually require a wrapping `form` element. F
 the controls that do not require user state, including `Label`, `Image`,
 and `Hyperlink`) can exist outside of a form.
 
-TODO
+### Don't Include a Wrapping Form on the MasterPage
+
+As noted above, since many Server Controls do not require a wrapping `form` element, not
+including this `form` element on a MasterPage will allow consumers of the MasterPage to
+only use a containing `form` when necessary.
+
+### Don't Use Unnecessary Server Controls
+
+Although ASP.NET Web Forms development encourages the use of Server Controls, they are not
+always necessary. For example, the following:
+
+```html
+<asp:HyperLink Text="About Me" NavigateUrl="~/About.aspx" runat="server"></asp:HyperLink>
+```
+
+Could easily be replaced with the following:
+
+```html
+<a href="~/About.aspx" runat="server">About Me</a>
+```
+
+Furthermore, if application URL resolving is unnecessary, this could be further reduced to:
+
+```html
+<a href="About.aspx">About Me</a>
+```
 
 ## Disclaimer
 
