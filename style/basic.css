@@ -67,7 +67,8 @@ form.webform .inner-form textarea {
 }
 
 form.webform .inner-form input,
-form.webform .inner-form textarea {
+form.webform .inner-form textarea,
+form.webform .inner-form input:not[type=text] {
     padding: 4px 0;
 }
 
