@@ -19,7 +19,7 @@ This repository contains two major components:
 ### Including the Stylesheets
 
 To apply the override styles, you need to create a directory underneath the `mwf/root/assets/css`
-directory (for example `aspnetoverride`), that includes the three stylesheets, and then reference this
+directory that includes the three stylesheets (for example `aspnetoverride`) and then reference this
 directory in the `mwf/config/css.ini` configuration file:
 
 ```
@@ -35,9 +35,9 @@ Alternatively, you could include the stylesheets
 
 ### Applying the Styles
 
-Next, simply add the `.webform` CSS class to the ASP.NET form containing
+Next, simply add the `.webform` class to the ASP.NET form containing
 the web page's elements. For forms within this containing form, use a `div` element with an
-`.inner-form` CSS class instead of a form.
+`.inner-form` class instead of a form.
 
 For example, imagine we have the following standard MWF page with a form:
 
@@ -58,7 +58,7 @@ For example, imagine we have the following standard MWF page with a form:
 
 Now, imagine this page was wrapped in a form element. To force the styling to match the default
 MWF styling, add `.webform` to the containing `form` element and switch the inner `form` with
-a `div` with the `.inner-form` CSS class.
+a `div` with the `.inner-form` class.
 
 ```html
 <form id="mainForm" runat="server" class="webform">
@@ -87,7 +87,7 @@ The following guidelines provide some general advice for avoiding the issues des
 
 Many of the Server Controls do not actually require a wrapping `form` element. For example,
 the controls that do not require user state, including `Label`, `Image`,
-and `Hyperlink`) can exist outside of a form.
+and `Hyperlink`, can exist outside of a form.
 
 ### Don't Include a Wrapping Form on the MasterPage
 
@@ -104,7 +104,7 @@ always necessary. For example, the following:
 <asp:HyperLink Text="About Me" NavigateUrl="~/About.aspx" runat="server"></asp:HyperLink>
 ```
 
-Could easily be replaced with the following:
+Could easily be replaced with:
 
 ```html
 <a href="~/About.aspx" runat="server">About Me</a>
